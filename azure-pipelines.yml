@@ -14,8 +14,5 @@ steps:
     gradleWrapperFile: 'gradlew'
     tasks: 'build'
     publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    codeCoverageToolOption: 'JaCoCo'
-    codeCoverageClassFilesDirectories: 'build/classes/main/'
     javaHomeOption: 'Path'
     jdkDirectory: '/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home'
