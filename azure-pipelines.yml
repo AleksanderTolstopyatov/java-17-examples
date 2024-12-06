@@ -19,10 +19,3 @@ steps:
     codeCoverageClassFilesDirectories: 'build/classes/main/'
     javaHomeOption: 'Path'
     jdkDirectory: '/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home'
-    sonarQubeRunAnalysis: true
-    sqGradlePluginVersionChoice: 'specify'
-    sonarQubeGradlePluginVersion: '2.6.1'
-    checkStyleRunAnalysis: true
-    findBugsRunAnalysis: true
-    pmdRunAnalysis: true
-    spotBugsAnalysis: false
