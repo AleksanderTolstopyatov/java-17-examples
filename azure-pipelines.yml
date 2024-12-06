@@ -9,18 +9,20 @@ trigger:
 pool: Default
 
 steps:
-- task: JavaToolInstaller@1
-  inputs:
-    versionSpec: '17'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
 - task: Gradle@3
   inputs:
-    gradleWrapperFile: 'gradlew'  # Path to your Gradle wrapper
-    tasks: 'build'  # Replace with the tasks you want to run
-    options: '-Xmx3072m' 
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
     publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'  # Updated pattern for test result files
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.17'  # Replace with your JDK version
-    jdkArchitectureOption: 'x64'
+    testResultsFiles: '**/TEST-*.xml'
+    codeCoverageToolOption: 'JaCoCo'
+    codeCoverageClassFilesDirectories: 'build/classes/main/'
+    javaHomeOption: 'Path'
+    jdkDirectory: '/opt/homebrew/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '2.6.1'
+    checkStyleRunAnalysis: true
+    findBugsRunAnalysis: true
+    pmdRunAnalysis: true
+    spotBugsAnalysis: false
