@@ -1,5 +1,8 @@
+apply plugin: 'jacoco'
+
 subprojects {
     apply plugin: "java"
+    apply plugin: "jacoco"
 
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
@@ -34,18 +37,24 @@ subprojects {
         jvmArgs += '--enable-preview'
     }
 
-}
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        xml.required.set(true)
-        html.required.set(true)
-        csv.required.set(false)
+    jacocoTestReport {
+        dependsOn test
+        reports {
+            xml.required.set(true)
+            html.required.set(true)
+            csv.required.set(false)
+        }
     }
 }
 
+// Настройка для корневого проекта, если это необходимо
+allprojects {
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
+}
 
+// Объявление модулей
 project(':jep-384_records') {}
 project(':jep-358_helpful-npe') {}
 project(':jep-378_text-blocks') {}
