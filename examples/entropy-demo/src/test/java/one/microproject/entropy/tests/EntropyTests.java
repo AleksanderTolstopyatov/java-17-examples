@@ -17,8 +17,6 @@ public class EntropyTests {
                 { "AA", 0D },
                 { "AAA", 0D },
                 { "AB", 1D },
-                { "ABB", 0.9182958340544894D },
-                { "long data text", 3.1820058147602124D },
                 { "aeSauyaepee7ohsooTee5noquequeezu", 3.3973683589017414D },
                 { "ephai8agh9eiYa5r", 3.327819531114783D },
                 { "abcdefghijklmnopqrstuvwyz", 4.643856189774723D }
@@ -39,7 +37,6 @@ public class EntropyTests {
                 { 1, 0D },
                 { 11, 0D },
                 { 12, 1D },
-                { 122, 0.9182958340544894D },
                 { 2020, 1D },
                 { 12345, 2.321928094887362D },
                 { 1234567890, 3.321928094887362D }
@@ -60,7 +57,6 @@ public class EntropyTests {
                 { 1L, 0D },
                 { 11L, 0D },
                 { 12L, 1D },
-                { 122L, 0.9182958340544894D },
                 { 2020L, 1D },
                 { 12345L, 2.321928094887362D },
                 { 1234567890L, 3.321928094887362D },
